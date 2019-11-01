@@ -31,17 +31,32 @@ namespace MVC_Start.Controllers
     public ViewResult DemoChart()
     {
       string[] ChartLabels = new string[] { "Africa", "Asia", "Europe", "Latin America", "North America" };
+      string[] ChartColors = new string[] { "#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850" };
       int[] ChartData = new int[] { 2478, 5267, 734, 784, 433 };
 
       ChartModel Model = new ChartModel
       {
         ChartType = "bar",
         Labels = String.Join(",", ChartLabels.Select(d => "'" + d + "'")),
+        Colors = String.Join(",", ChartColors.Select(d => "\"" + d + "\"")),
         Data = String.Join(",", ChartData.Select(d => d)),
         Title = "Predicted world population (millions) in 2050"
       };
 
       return View(Model);
+    }
+
+    public ViewResult DemoAjax()
+    {
+      return View();
+    }
+
+    public JsonResult AjaxResult()
+    {
+      Task.WaitAll(Task.Delay(1000));
+
+      return Json("Test");
+
     }
   }
 }

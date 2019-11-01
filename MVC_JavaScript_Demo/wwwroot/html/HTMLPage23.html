@@ -1,18 +1,11 @@
 ﻿<!--
-  Example to introduce charting in MVC using chart.js
+  Examples to introduce charting using chart.js
 
   Author: Manish Agrawal
-  Date: Feb 25, 2019
 
   Many examples use or are inspired by
   http://tobiasahlin.com/blog/chartjs-charts-to-get-you-started/
 -->
-
-@model ChartModel
-
-@{
-  Layout = null;
-}
 
 <!DOCTYPE html>
 
@@ -26,18 +19,18 @@
 <body>
   <h1> Bar chart example</h1>
 
-  <canvas id="barchartexample" width="800" height="450"></canvas>
+  <canvas id="barchartexample" width="300" height="150"></canvas>
 
   <script>
     new Chart(document.getElementById("barchartexample"), {
-      type: '@Model.ChartType',
+      type: 'bar',
       data: {
-        labels: [@Html.Raw(@Model.Labels)],
+        labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
         datasets: [
           {
             label: "Population (millions)",
-            backgroundColor: [@Html.Raw(@Model.Colors)],
-            data: [@Model.Data]
+            backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+            data: [2478, 5267, 734, 784, 433]
           }
         ]
       },
@@ -45,7 +38,7 @@
         legend: { display: false },
         title: {
           display: true,
-          text: '@Model.Title'
+          text: 'Predicted world population (millions) in 2050'
         }
       }
     });
