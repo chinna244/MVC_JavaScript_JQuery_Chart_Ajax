@@ -18,10 +18,10 @@
     "MVC_Start": {
       "commandName": "Project",
       "launchBrowser": true,
+      "applicationUrl": "http://localhost:34925/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "http://localhost:34925/"
+      }
     }
   }
 }

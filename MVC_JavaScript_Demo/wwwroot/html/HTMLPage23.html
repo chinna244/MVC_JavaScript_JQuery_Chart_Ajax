@@ -25,24 +25,24 @@
 
     <script>
         new Chart(document.getElementById("barchartexample"), {
-            type: 'horizontalBar',
+            type: 'bar',
             data: {
                 labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
                 datasets: [
                     {
                         label: "Population (millions)",
                         backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                        data: [478, 267, 734, 784, 433]
+                        data: [478, 267, 734, 1784, 433]
                     },
                     {
                         label: "Area (sq mi)",
                         backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                        data: [78, 67, 34, 84, 33]
+                        data: [118, 67, 34, 84, 33]
                     }
                 ]
             },
             options: {
-                legend: { display: false },
+                legend: { display: true },
                 title: {
                     display: true,
                     text: 'Predicted world population (millions) in 2050'
